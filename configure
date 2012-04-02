@@ -17094,6 +17094,12 @@ $as_echo "$as_me: WARNING: *** Compiler optimisations switched off. ***" >&2;}
 		linux*|kfreebsd*-gnu*|gnu*)
 			SHLIB_VERSION_ARG="-Wl,--version-script=Version_script"
 			;;
+
+		*nto*|*qnx*)
+			temp_CFLAGS=`echo $CFLAGS | sed "s/-std=gnu99//"`
+			CFLAGS=$temp_CFLAGS
+			;;
+
 		*)
 			;;
 		esac
